@@ -12,7 +12,11 @@ require_relative 'destination.rb'
 module Seyyah 
 class CLI 
 
-    def start 
+    def start
+        user_interface
+    end 
+
+    def user_interface
         input = " "
         puts "Welcome! What region would you like to learn more about?"
         puts "Please Choose From the Following Regions: Enter a number from 1 to 10."
@@ -20,15 +24,26 @@ class CLI
         puts " "
 
         input = gets.chomp 
-        input.to_i
+        if input == "exit"
+            puts "Farewell! Thank you for using Seyyah!"
+            abort 
+        else 
+            input = input.to_i
+        end 
 
         case input 
         when 1
             Countries.africa
             input = " "
             input = gets.chomp 
-            input.to_i
 
+            if input == "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                abort 
+            else 
+                input = input.to_i
+            end 
+         
             case input 
             when 1
                 Africa.south_africa
@@ -52,20 +67,38 @@ class CLI
                 Africa.zambia
             else 
                 "Sorry ! That's not a valid response!"
+            end 
+        
 
         when 2 
             Countries.antartica
             input = " "
             input = gets.chomp 
-            input.to_i
+            if input == "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                abort 
+            else 
+                input = input.to_i
+            end 
+            
+            Antartica.antartica
+            if input == "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                abort 
+            end 
 
-            Antartica.antartica 
-
+            
         when 3 
             Countries.asia
             input = " "
             input = gets.chomp 
-            input.to_i
+
+            if input == "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                abort 
+            else 
+                input = input.to_i
+            end 
 
             case input 
             when 1
@@ -88,18 +121,28 @@ class CLI
                 Asia.south_korea
             when 10 
                 Asia.myanmar
+            when "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                exit 
             else 
                 "Sorry ! That's not a valid response!"
+            end 
 
         when 4 
             Countries.australia_pacific
             input = " "
             input = gets.chomp 
-            input.to_i
+
+            if input == "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                abort 
+            else 
+                input = input.to_i
+            end 
 
             case input 
             when 1
-                
+                AustraliaPacific.australia
             when 2 
                 AustraliaPacific.new_zealand
             when 3
@@ -118,14 +161,24 @@ class CLI
                 AustraliaPacific.samoa
             when 10 
                 AustraliaPacific.tonga
+            when "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                exit 
             else 
                 "Sorry ! That's not a valid response!"
+            end 
 
         when 5 
             Countries.caribbean
             input = " "
             input = gets.chomp 
-            input.to_i
+
+            if input == "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                abort 
+            else 
+                input = input.to_i
+            end 
 
             case input 
             when 1
@@ -148,14 +201,24 @@ class CLI
                 Caribbean.british_virgin_islands
             when 10 
                 Caribbean.guadeloupe
+            when "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                exit 
             else 
                 "Sorry ! That's not a valid response!"
+            end 
 
         when 6 
             Countries.c_america
             input = " "
             input = gets.chomp 
-            input.to_i
+
+            if input == "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                abort 
+            else 
+                input = input.to_i
+            end 
 
             case input 
             when 1
@@ -172,14 +235,24 @@ class CLI
                 CentralAmerica.honduras
             when 7 
                 CentralAmerica.el_salvador
+            when "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                exit 
             else 
                 "Sorry ! That's not a valid response!"
+            end 
 
         when 7 
             Countries.europe
             input = " "
             input = gets.chomp 
-            input.to_i
+
+            if input == "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                abort 
+            else 
+                input = input.to_i
+            end 
 
             case input 
             when 1
@@ -202,14 +275,24 @@ class CLI
                 Europe.portugal
             when 10 
                 Europe.ireland
+            when "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                exit 
             else 
                 "Sorry ! That's not a valid response!"
+            end 
 
         when 8 
             Countries.m_east
             input = " "
             input = gets.chomp 
-            input.to_i 
+
+            if input == "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                abort 
+            else 
+                input = input.to_i
+            end 
 
             case input 
             when 1
@@ -232,14 +315,24 @@ class CLI
                 MiddleEast.bahrain
             when 10 
                 MiddleEast.kuwait
+            when "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                exit 
             else 
                 "Sorry ! That's not a valid response!"
+            end 
 
         when 9 
             Countries.n_america
             input = " "
             input = gets.chomp 
-            input.to_i
+
+            if input == "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                abort 
+            else 
+                input = input.to_i
+            end 
 
             case input 
             when 1
@@ -248,14 +341,24 @@ class CLI
                 NorthAmerica.canada
             when 3
                 NorthAmerica.mexico
+            when "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                exit 
             else 
                 "Sorry ! That's not a valid response!"
+            end 
 
         when 10 
             Countries.s_america
             input = " "
             input = gets.chomp 
-            input.to_i
+
+            if input == "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                abort 
+            else 
+                input = input.to_i
+            end 
 
             case input 
             when 1
@@ -278,22 +381,28 @@ class CLI
                 SouthAmerica.uruguay
             when 10 
                 SouthAmerica.paraguay
+            when "exit"
+                puts "Farewell! Thank you for using Seyyah!"
+                exit 
             else 
                 "Sorry ! That's not a valid response!"
+            end 
 
+        when "exit"
+            puts "Farewell! Thank you for using Seyyah!"
+            abort
         else 
             "Sorry ! That's not a valid input. Please try again!"
         end
-        #This case statement outputs the region info 
-        #Welcome to REGION! + Region Description 
-
-
-        
-
-
     end 
     
+    #def repeat 
+        #"Would you like to learn about another country?"
+    #end 
 
+    #def loading
+        #"----------LOADING----------"
+    #end 
 end 
 end 
 

@@ -84,8 +84,8 @@ class Countries
 
     def self.s_america
         self.get_region_info("https://www.lonelyplanet.com/south-america")
-        self.countries("https://www.lonelyplanet.com/south-america")
+        self.get_countries("https://www.lonelyplanet.com/south-america")
     end 
 
-
+end 
 end 
