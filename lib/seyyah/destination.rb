@@ -5,6 +5,9 @@
             #--> Country Description 
             #--> Top 10 Cities by Country 
             
+
+#The function of this class is to output to the user the information they desire about the country they previously chose. All the country information is contained in this class. 
+
 require 'nokogiri'
 require 'open-uri'
 

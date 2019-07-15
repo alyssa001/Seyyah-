@@ -8,6 +8,8 @@
 require 'nokogiri'
 require 'open-uri'
 
+#This file contains the scraping method for the initial user choice. A single method is contained in this class to get the regions from the host website and output them to the user. 
+
 module Seyyah 
 class Regions
 
@@ -17,9 +19,9 @@ class Regions
         counter = 0
 
         doc.css("#destinations-menu-desktop .Submenu__list--3MiRl .Item__container--_wmB6").each do |n|
-            regg = n.content
+            regions_data = n.content
             counter += 1
-            puts "#{counter}. #{regg}" 
+            puts "#{counter}. #{regions_data}" 
         end
         #Outputs : Please Choose From the Following Regions: 
                     #1. Country1 

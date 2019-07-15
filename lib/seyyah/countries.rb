@@ -4,6 +4,8 @@
         #--> Top 10 Countries by Region 
             #--> Country Description 
             #--> Top 10 Cities by Country 
+    
+#This class contains the methods that give information about the region to the user depending on their choice. The function of this class is to return region information and output a list of countries for the user to choose from.     
             
 require 'nokogiri'
 require 'open-uri'
@@ -30,9 +32,9 @@ class Countries
         puts"\n"
       
         doc.css("div.top_places__column .tlist__secondary-link").each do |n|
-          reg = n.content 
+          country_data = n.content 
           counter += 1 
-          puts "#{counter}. #{reg}" if counter < 11
+          puts "#{counter}. #{country_data}" if counter < 11
         end 
         #Outputs : 1. COUNTRY 
                 #  2. COUNTRY 

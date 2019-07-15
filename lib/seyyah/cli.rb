@@ -5,6 +5,8 @@
             #--> Country Description 
             #--> Top 10 Cities by Country 
             
+#This class contains the information the user will see and contains the logic that will display the correct information to the user by calling on the class methods necessary for each stage. 
+
 require_relative 'regions.rb'
 require_relative 'countries.rb'
 require_relative 'destination.rb'
