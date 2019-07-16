@@ -41,6 +41,7 @@ class Seyyah::CLI
         list_regions
         
         input = gets.strip
+
         if input.downcase == "menu"
             main_menu 
         elsif input.downcase == "exit"
@@ -50,38 +51,14 @@ class Seyyah::CLI
             index_region = input.to_i-1 
             puts "Welcome to #{Seyyah::Region.all[index_region].name}!"
             puts Seyyah::Region.all[index_region].description
-            puts "The top 10 countries in Europe are: "
+            puts "The top 10 countries in #{Seyyah::Region.all[index_region].name} are: " unless index_region == 1 
             Seyyah::Region.all[index_region].countries.each_with_index do |country, index|
                 index = index+1
                 puts "#{index}. #{country.name}"
-            end 
-        another
+            end  
+            another 
         end 
     end 
-
-    #def country_detail(index_region)
-    #    puts "Enter a number from 1 to 10 to learn more! Type 'menu' at any time to go back to the main menu or type 'exit' to exit the program."
-
-    #    input = gets.strip 
-    #    if input.downcase == "menu"
-    #        main_menu 
-    #    elsif input.downcase == "exit"
-    #        puts "Farewell! Thank you for using Seyyah!"
-    #        abort 
-    #    elsif input.to_i.between?(1, 10)
-    #        ind = input.to_i-1 
-    #        puts "Welcome to #{Seyyah::Region.all[index_region].countries[ind]}!"
-    #        Seyyah::Region.all[index_region].countries.each do |country|
-                
-
-            #puts " "
-            #Seyyah::Region.all[ind].countries.each_with_index do |country, index|
-            #    index = index+1
-            #    puts "#{index}. #{country.name}"
-            end 
-
-    #end     
-
 
     def another
         puts "Would you like to learn about another region? Enter 'menu' to return to the main menu or 'exit' to exit."
@@ -95,3 +72,4 @@ class Seyyah::CLI
         else "That is not a valid input!"
         end 
     end 
+end 
