@@ -1,12 +1,14 @@
 class Seyyah::Region 
-    attr_accessor :name, :url, :countries, :description
+    attr_accessor :name, :url, :countries, :description, :sub_desc
 
-  @@all = []
+  @@all = [ ]
 
   def initialize(name, url)
     self.name = name
     self.url = url
-    self.countries = []
+    self.countries = [ ]
+    self.description = [ ]
+    self.sub_desc = [ ]
   end
 
   def save
@@ -22,4 +24,5 @@ class Seyyah::Region
   def self.all
     @@all
   end
+
 end
