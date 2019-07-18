@@ -32,7 +32,7 @@ class Seyyah::CLI
     def list_regions 
         Seyyah::Region.all.each_with_index do |region, index|
             index = index+1
-            puts "#{index}. #{region.name}"
+            puts "#{index}. #{region.name}" 
         end 
     end 
 
@@ -55,9 +55,12 @@ class Seyyah::CLI
             Seyyah::Region.all[index_region].countries.each_with_index do |country, index|
                 index = index+1
                 puts "#{index}. #{country.name}"
-            end  
+            end 
             another 
-        end 
+        else   
+            puts "Sorry! That's not a valid input!"
+            main_menu
+        end
     end 
 
     def another

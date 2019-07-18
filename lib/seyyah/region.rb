@@ -1,5 +1,5 @@
 class Seyyah::Region 
-    attr_accessor :name, :url, :countries, :description, :sub_desc
+    attr_accessor :name, :url, :countries, :description
 
   @@all = [ ]
 
@@ -8,7 +8,7 @@ class Seyyah::Region
     self.url = url
     self.countries = [ ]
     self.description = [ ]
-    self.sub_desc = [ ]
+    #self.sub_desc = [ ]
   end
 
   def save
